@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đếm số lần click</title>
+</head>
+<body>
+
+<button id="clickButton">Click vào đây</button>
+<p>Số lần click: <span id="clickCount">0</span></p>
+
+<script>
+    var button = document.getElementById("clickButton");
+    var clickCountSpan = document.getElementById("clickCount");
+    var clickCount = 0;
+    var lastClickTime = null;
+
+    button.addEventListener("click", function() {
+        var currentTime = new Date().getTime(); // Lấy thời gian hiện tại
+
+        if (lastClickTime && (currentTime - lastClickTime) < 500) { // Kiểm tra nếu có 2 lần click liên tiếp trong khoảng thời gian 500ms
+            clickCount--; // Trừ đi 1 nếu có 2 lần click liên tiếp
+        } else {
+            clickCount++; // Tăng biến đếm nếu chỉ có 1 lần click
+        }
+
+        lastClickTime = currentTime; // Cập nhật thời gian của lần click gần nhất
+        clickCountSpan.textContent = clickCount; // Hiển thị số lần click mới lên trên giao diện
+    });
+</script>
+
+</body>
+</html>
+
+

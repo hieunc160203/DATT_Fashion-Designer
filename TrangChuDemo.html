@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> </script>
+    <script>
+        var button = document.getElementById("clickButton");
+        var clickCountSpan = document.getElementById("clickCount");
+        var clickCount = 0;
+        var lastClickTime = null;
+    
+        button.addEventListener("click", function() {
+            var currentTime = new Date().getTime(); // Lấy thời gian hiện tại
+    
+            if (lastClickTime && (currentTime - lastClickTime) < 500) { // Kiểm tra nếu có 2 lần click liên tiếp trong khoảng thời gian 500ms
+                clickCount--; // Trừ đi 1 nếu có 2 lần click liên tiếp
+            } else {
+                clickCount++; // Tăng biến đếm nếu chỉ có 1 lần click
+            }
+    
+            lastClickTime = currentTime; // Cập nhật thời gian của lần click gần nhất
+            clickCountSpan.textContent = clickCount; // Hiển thị số lần click mới lên trên giao diện
+        });
+    </script>
+
+</head>
+
+<body style="background-color: #fee6c4;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+            <img src="../Demo_code/image/FD.png" alt="" style="width: 100px; height: 100px; left: 10px;">
+            <b><a class="navbar-brand" href="#">Fashion Designer</a></b>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nổi bậc</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Chủ đề của bạn</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Cài đặt
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="../Demo_code/HoSo.html">Hồ sơ</a></li>
+                            <li><a class="dropdown-item" href="../Demo_code/TaoMoi.html">Tạo mới</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <a href="../Demo_code/DangNhap.html"><button type="button" class="btn btn-outline-success" style="width: 200px; margin-left: 20px;">Đăng Nhập</button></a>
+                    <a href="../Demo_code/DangKy.html"><button type="button" class="btn btn-outline-danger" style="width: 200px; margin-left: 10px;">Đăng Ký</button></a>
+                    
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Demo_code/image/011e54fe0ee85ceb3d3730ac0622b8e2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Demo_code/image/beea6d4b79323b7387c96e7236d8d02d.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Demo_code/image/feeb3df146e90819c75ae02cb6c75424.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div style="margin-top: 50px; margin-left: 120px;">
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left;">
+            <img src="../Demo_code/image/1.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">My tiny Space</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <button class="btn btn-primary" id="clickButton">Thích : <span id="clickCount">0</span></p></button>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left;">
+            <img src="../Demo_code/image/2.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">Kiều Linh hh🌷</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left;">
+            <img src="../Demo_code/image/3.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">𝓚𝓲𝓮𝓾𝓾𝓛𝓲𝓷𝓱𝓱𝓱🌷</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left;">
+            <img src="../Demo_code/image/4.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">Meimei Wan</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left; margin-top: 20px;">
+            <img src="../Demo_code/image/5.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">Dayana</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; float: left; margin-top: 20px;">
+            <img src="../Demo_code/image/6.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">🍂Jawaher🍃</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; margin-top: 20px; float: left;">
+            <img src="../Demo_code/image/7.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">Hoa Gian Ôn Tửu</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left: 30px; margin-top: 20px; float: left;">
+            <img src="../Demo_code/image/8.jpg" class="card-img-top" alt="..." style="width: 18rem; height: 23rem;">
+            <div class="card-body">
+                <h5 class="card-title">ℝ𝕚𝕟𝕟𝕖~~♡</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="gallery">
+        <img src="/Demo_code/image/1.jpg" alt="Hình ảnh 1">
+        <img src="/Demo_code/image/2.jpg" alt="Hình ảnh 2">
+        <img src="/Demo_code/image/3.jpg" alt="Hình ảnh 3">
+        <img src="/Demo_code/image/4.jpg" alt="Hình ảnh 4">
+        <img src="/Demo_code/image/5.jpg" alt="Hình ảnh 5">
+        <img src="/Demo_code/image/6.jpg" alt="Hình ảnh 6">
+        <img src="/Demo_code/image/7.jpg" alt="Hình ảnh 7">
+        <img src="/Demo_code/image/8.jpg" alt="Hình ảnh 8">
+        <img src="/Demo_code/image/9.jpg" alt="Hình ảnh 9">
+        <img src="/Demo_code/image/10.jpg" alt="Hình ảnh 10">
+    </div> -->
+</body>
+
+</html>
