@@ -1,0 +1,35 @@
+.container-fluid3{
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    border: 1px black solid;
+}
+.container-fluid2{
+    width: 100%;
+    min-height: 310px;
+    border-radius: 5px;
+    border: 1px black solid;
+}
+.container-fluid0{
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    border: 1px black solid;
+}
+.container{
+    margin-bottom: 20px;
+}
+h5{
+    margin-left: 10px;
+    padding-top: 10px;
+}
+h3{
+    margin-left: 10px;
+}
+p{
+    margin-left: 10px;
+}
+.fakeimg {
+    width: 400px;
+    height: auto;
+}

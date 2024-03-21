@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện mặc định</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #content {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Giao diện mặc định</h1>
+        <button onclick="showContent(1)">Giao diện 1</button>
+        <button onclick="showContent(2)">Giao diện 2</button>
+        <button onclick="showContent(3)">Giao diện 3</button>
+        <div id="content">
+            <h2>Giao diện mặc định</h2>
+            <p>Đây là giao diện mặc định được hiển thị khi trang được tải.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(buttonId) {
+            var contentDiv = document.getElementById("content");
+            switch (buttonId) {
+                case 1:
+                    contentDiv.innerHTML = `
+                <div class="gallery">
+        <img src="/image/1.jpg" alt="Hình ảnh 1">
+        <img src="/image/2.jpg" alt="Hình ảnh 2">
+        <img src="/image/3.jpg" alt="Hình ảnh 3">
+        <img src="/image/4.jpg" alt="Hình ảnh 4">
+        <img src="/image/5.jpg" alt="Hình ảnh 5">
+        <img src="/image/6.jpg" alt="Hình ảnh 6">
+        <img src="/image/7.jpg" alt="Hình ảnh 6">
+        <img src="/image/8.jpg" alt="Hình ảnh 6">
+        <img src="/image/9.jpg" alt="Hình ảnh 6">
+        <img src="/image/10.jpg" alt="Hình ảnh 6">
+
+        <img src="/image/1.jpg" alt="Hình ảnh 1">
+        <img src="/image/2.jpg" alt="Hình ảnh 2">
+        <img src="/image/3.jpg" alt="Hình ảnh 3">
+        <img src="/image/4.jpg" alt="Hình ảnh 4">
+        <img src="/image/5.jpg" alt="Hình ảnh 5">
+        <img src="/image/6.jpg" alt="Hình ảnh 6">
+        <img src="/image/7.jpg" alt="Hình ảnh 6">
+        <img src="/image/8.jpg" alt="Hình ảnh 6">
+        <img src="/image/9.jpg" alt="Hình ảnh 6">
+        <img src="/image/10.jpg" alt="Hình ảnh 6">
+        <!-- Thêm các hình ảnh khác tại đây -->
+    </div>
+                `;
+                    break;
+                case 2:
+                    contentDiv.innerHTML = `
+                    <h2>Giao diện 2</h2>
+                    <p>Đây là giao diện số 2.</p>
+                    <p>...</p>
+                `;
+                    break;
+                case 3:
+                    contentDiv.innerHTML = `
+                    <h2>Giao diện 3</h2>
+                    <p>Đây là giao diện số 3.</p>
+                    <p>...</p>
+                `;
+                    break;
+                default:
+                    contentDiv.innerHTML = `
+                    <h2>Giao diện mặc định</h2>
+                    <p>Đây là giao diện mặc định được hiển thị khi trang được tải.</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
